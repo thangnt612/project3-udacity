@@ -11,7 +11,7 @@ class BaseConfig:
     DB_URL = 'postgresql://{user}:{pw}@{url}/{db}'.format(user=POSTGRES_USER,pw=POSTGRES_PW,url=POSTGRES_URL,db=POSTGRES_DB)
     SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI') or DB_URL
     CONFERENCE_ID = 1
-    SECRET_KEY = 'lJkAym5tEZf4WyCfe73DeKLPrf/wEiYtKYrRx9pk9oE='
+    SECRET_KEY = 'zqCxSNJawcAmfmcd/67C0Ewl6/YDaSMO1jCjiLXV4iY='
     SERVICE_BUS_CONNECTION_STRING ='Endpoint=sb://notification003.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=lJkAym5tEZf4WyCfe73DeKLPrf/wEiYtKYrRx9pk9oE=' #TODO: Update value
     SERVICE_BUS_QUEUE_NAME ='myqueue'
     ADMIN_EMAIL_ADDRESS = 'thangnt612@gmail.com'

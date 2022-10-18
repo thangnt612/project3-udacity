@@ -56,6 +56,7 @@ def notifications():
 
 @app.route('/Notification', methods=['POST', 'GET'])
 def notification():
+    print('rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr')
     if request.method == 'POST':
 
         notification = Notification()
@@ -63,10 +64,11 @@ def notification():
         notification.subject = request.form['subject']
         notification.status = 'Notifications submitted'
         notification.submitted_date = datetime.utcnow()
+        queue_client.send(Message(str(5)))
         try:
             db.session.add(notification)
             db.session.commit()
-            logging.info("--111---{0}--111----".format(notification.id))
+            print("--111---{0}--111----".format(notification.id))
 
 
             queue_client.send(Message(str(notification.id)))
